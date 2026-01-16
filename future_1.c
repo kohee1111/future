@@ -89,3 +89,17 @@ int main() {
     pclose(pipe);
     return 0;
 }
+//learning fgetc()
+#include<stdio.h>
+#include<stdlib.h>
+int main(void){
+    FILE *fp = fopen("log.c" , "r") ; 
+    if(fp == NULL){
+        return -1 ;
+    }
+    int ch ; 
+    while((ch = fgetc(fp)) != EOF){
+        putchar(ch) ;
+    }
+    return 0 ;
+}

@@ -79,3 +79,13 @@ int main(void) {
     my_print("Printing message via dprintf()\n");
     return 0;
 }
+///popen command running 
+#include <stdio.h>
+
+int main() {
+    FILE *pipe = popen("cat > output.txt", "w");  // simulation of network pipe
+    fprintf(pipe, "Sending important message\n");
+    fflush(pipe);  // buffer immediately write হবে, delay হবে না
+    pclose(pipe);
+    return 0;
+}
